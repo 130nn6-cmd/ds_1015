@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ランダム数字表示</title>
+  <style>
+    #number {
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="showRandomNumber()">数字を表示</button>
+  <div id="number">--</div>
+
+  <script>
+    function showRandomNumber() {
+      const num = Math.floor(Math.random() * 100) + 1; // 1〜100のランダムな整数
+      const numberDiv = document.getElementById("number");
+
+      numberDiv.textContent = num;
+
+      if (num >= 1 && num <= 5) {
+        numberDiv.style.color = "blue";
+      } else if (num >= 6 && num <= 94) {
+        numberDiv.style.color = "black";
+      } else {
+        numberDiv.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
